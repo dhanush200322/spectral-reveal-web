@@ -7,6 +7,7 @@ import Resume from "./pages/Resume";
 import NotFound from "./pages/NotFound";
 import Navigation from "@/components/Navigation";
 import NeonCursor from "@/components/NeonCursor";
+import About from "./pages/About";
 
 // 👈 Add this import
 
@@ -20,6 +21,8 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<Hero />} />
+        <Route path="/about" element={<About />} />
+
         <Route path="/projects" element={<Projects />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/contact" element={<Contact />} />
