@@ -3,25 +3,30 @@ import { Code, Server, Palette, Wrench } from "lucide-react";
 
 const skills = {
   frontend: [
-    { label: "React", value: 95 },
-    { label: "TypeScript", value: 90 },
-    { label: "Tailwind CSS", value: 92 },
-    { label: "Three.js", value: 85 },
+    { label: "React", value: 80 },
+    { label: "HTML", value: 90 },
+    { label: "Tailwind CSS", value: 80 },
+    { label: "JAVA SCRIPT", value: 85},
+     { label: "BOOTSTRAP",value:90},
+     { label: "React Native",value:60},
   ],
   backend: [
     { label: "Node.js", value: 88 },
     { label: "Python", value: 85 },
     { label: "PostgreSQL", value: 82 },
     { label: "REST APIs", value: 90 },
+    {label: "spring boot",value:75},
   ],
   design: [
-    { label: "UI/UX Design", value: 80 },
-    { label: "Figma", value: 85 },
-    { label: "Animation", value: 88 },
+    { label: "Canva",value:85},
+    { label: "Framer",value:95},
+    { label: "lovable dev",value:90},
   ],
   tools: [
     { label: "Git", value: 92 },
-    { label: "Docker", value: 78 },
+    { label: "vercel",value:95},
+    {label:"github",value:90},
+    {label:"netlify",value:95},
     { label: "VS Code", value: 95 },
   ],
 };

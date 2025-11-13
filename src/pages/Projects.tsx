@@ -4,37 +4,29 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "3D Portfolio Website",
-    description: "Interactive portfolio built with React, Three.js, and Framer Motion",
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop",
-    tags: ["React", "Three.js", "Framer Motion"],
-    github: "#",
-    demo: "#",
+    title: "Temple GYM Promotion Based Website",
+    description: "Interactive Style built with Frontend Technologies",
+    image: "gym.png",
+    tags: ["HTML", "CSS", "JavaScript"],
+    demo: "https://temple-gym.netlify.app/",
   },
   {
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with payment integration",
-    image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?w=800&h=600&fit=crop",
-    tags: ["Next.js", "Stripe", "PostgreSQL"],
+    title: "Financial Website of DM",
+    description: "Health is Wealth to reach all over world IT Community",
+    image: "WM.png",
+    tags: ["React js", "CSS", "SQL","Firebase"],
     github: "#",
-    demo: "#",
+    demo: "https://www.dmhealthy.com/",
   },
   {
-    title: "AI Chat Application",
-    description: "Real-time chat app with AI-powered responses",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
-    tags: ["React", "OpenAI", "WebSockets"],
+    title: "DM Application for Android",
+    description: "Real-time News app with Financial Support",
+    image: "appport.png",
+    tags: ["React Native", "OpenAI", "WebSockets"],
     github: "#",
     demo: "#",
   },
-  {
-    title: "Task Management System",
-    description: "Collaborative project management tool with kanban boards",
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop",
-    tags: ["TypeScript", "Supabase", "Tailwind"],
-    github: "#",
-    demo: "#",
-  },
+
 ];
 
 const Projects = () => {

@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import { Home, Briefcase, Code, Mail, FileText } from "lucide-react";
+import { Home, Briefcase, Code, Mail, FileText, Contact } from "lucide-react";
 
 const navItems = [
   { path: "/", icon: Home, label: "Home" },
+   { path: "/About",icon: Contact,label: "About"},
   { path: "/projects", icon: Briefcase, label: "Projects" },
   { path: "/skills", icon: Code, label: "Skills" },
-  { path: "/contact", icon: Mail, label: "Contact" },
   { path: "/resume", icon: FileText, label: "Resume" },
+   { path: "/contact", icon: Mail, label: "Contact" },
 ];
 
 const Navigation = () => {
@@ -33,7 +34,7 @@ const Navigation = () => {
               </span>
             </div>
 
-            <span className="font-bold text-xl text-gradient">Portfolio</span>
+           
           </motion.div>
 
           {/* ✅ NAV ITEMS */}

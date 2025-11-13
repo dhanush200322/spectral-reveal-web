@@ -6,10 +6,16 @@ import Skills from "./pages/Skills";
 import Resume from "./pages/Resume";
 import NotFound from "./pages/NotFound";
 import Navigation from "@/components/Navigation";
+import NeonCursor from "@/components/NeonCursor";
+
+// 👈 Add this import
 
 export default function App() {
   return (
     <>
+      {/* 👇 Add the NeonCursor component here so it's global */}
+      <NeonCursor />
+
       <Navigation />
 
       <Routes>
