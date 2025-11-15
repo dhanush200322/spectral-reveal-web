@@ -12,16 +12,44 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e) => {
+  // ⭐ FULLY FIXED WORKING HANDLE SUBMIT ⭐
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    toast.success("Message sent! I'll get back to you soon.");
-    setFormData({ name: "", email: "", message: "" });
+
+    if (!formData.name || !formData.email || !formData.message) {
+      return toast.error("All fields are required!");
+    }
+
+    const loadingToast = toast.loading("Sending message...");
+
+    try {
+      // ⭐ FIXED — correct backend route
+      const res = await fetch("http://localhost:5001/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      toast.dismiss(loadingToast);
+
+      if (!res.ok) {
+        return toast.error(data.error || "Something went wrong");
+      }
+
+      toast.success("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      toast.dismiss(loadingToast);
+      toast.error("Server error. Try again later.");
+      console.log(error);
+    }
   };
 
   const contactInfo = [
     { icon: Mail, label: "Email", value: "ro224313@gmail.com" },
     { icon: Phone, label: "Phone", value: "+91 9345292428" },
-    { icon: MapPin, label: "Location", value: "India,TamilNadu,salem-636007" },
+    { icon: MapPin, label: "Location", value: "India, Tamil Nadu, Salem - 636007" },
   ];
 
   return (
@@ -97,7 +125,7 @@ const Contact = () => {
                 />
               </div>
 
-              {/* ✅ Neon Send Button */}
+              {/* Neon Send Button */}
               <button
                 type="submit"
                 className="w-full px-8 py-3 bg-[#00D4FF] text-black font-semibold rounded-xl hover:brightness-110 transition flex items-center justify-center gap-2"
@@ -105,7 +133,6 @@ const Contact = () => {
                 Send Message
                 <Send className="w-5 h-5" />
               </button>
-
             </form>
           </motion.div>
 
@@ -140,13 +167,11 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Bottom card */}
             <div className="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl p-8 border border-primary/20">
               <h3 className="text-2xl font-bold mb-4">Let's Build Something Amazing</h3>
               <p className="text-muted-foreground">
-                Whether you have a project in mind or just want to chat about 
-                technology and innovation, I'm always open to new opportunities 
-                and collaborations. Let's create something extraordinary together!
+                Whether you have a project in mind or just want to chat about technology and innovation,
+                I'm always open to new opportunities and collaborations. Let's create something extraordinary together!
               </p>
             </div>
           </motion.div>
