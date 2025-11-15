@@ -12,7 +12,7 @@ const Contact = () => {
     message: "",
   });
 
-  // ⭐ FULLY FIXED WORKING HANDLE SUBMIT ⭐
+  // ⭐ WORKING FULL SUBMIT HANDLER ⭐
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -23,7 +23,6 @@ const Contact = () => {
     const loadingToast = toast.loading("Sending message...");
 
     try {
-      // ⭐ FIXED — correct backend route
       const res = await fetch("http://localhost:5001/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -33,9 +32,7 @@ const Contact = () => {
       const data = await res.json();
       toast.dismiss(loadingToast);
 
-      if (!res.ok) {
-        return toast.error(data.error || "Something went wrong");
-      }
+      if (!res.ok) return toast.error(data.error || "Something went wrong");
 
       toast.success("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
@@ -67,7 +64,7 @@ const Contact = () => {
             Get In <span className="text-gradient">Touch</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind? Let's work together to bring your ideas to life
+            Have a project in mind? Let's work together to bring your ideas to life.
           </p>
         </motion.div>
 
@@ -136,7 +133,7 @@ const Contact = () => {
             </form>
           </motion.div>
 
-          {/* RIGHT CONTACT INFO */}
+          {/* RIGHT CONTACT INFORMATION */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
